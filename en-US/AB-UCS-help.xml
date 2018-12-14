@@ -1,0 +1,1132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Connect-ABUCS</command:name>
+      <command:verb>Connect</command:verb>
+      <command:noun>ABUCS</command:noun>
+      <maml:description>
+        <maml:para>Connect to a UCS instance using the standard Asurion read-only account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns a UCS Connection Object using the standard Asurion read-only UCS account.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Connect-ABUCS</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>UCS</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill UCS Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>UCS</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill UCS Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>You should always clean up by calling Disconnect-UCS -Ucs &lt;$Connection Object Variable&gt;</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>$UCS = Connect-ABUCS -UCS NEDUCS001</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-DatabaseData</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>DatabaseData</command:noun>
+      <maml:description>
+        <maml:para>Returns a dataset object.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns a dataset object by executed a query against a database based on the connection string supplied.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-DatabaseData</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="conn, cs">
+          <maml:name>connectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>query</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the database query to run.  This ideally would be a select statment of some kind.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="conn, cs">
+        <maml:name>connectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>query</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the database query to run.  This ideally would be a select statment of some kind.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-DatabaseData -verbose -connectionString (Get-UCSConnectionString) -query "Select InstanceName From UCSInstances Where Status = 'Online'"</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-UCSConnectionString</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>UCSConnectionString</command:noun>
+      <maml:description>
+        <maml:para>This function returns a connection string for the UCS database.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function is a easy place to store the connection information for the UCS database.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-UCSConnectionString</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-UCSConnectionString</dev:code>
+        <dev:remarks>
+          <maml:para>Server=NEDMCSSQL055SG2\INF2;Database=UCS;Integrated Security=true</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-UCSData</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>UCSData</command:noun>
+      <maml:description>
+        <maml:para>Collect all data from a UCS instance and write the results to the database as a new dataset.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Collect all data from a UCS instance and write the results to the database as a new dataset.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-UCSData</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Ucs</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+          <maml:name>ConnectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Ucs</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+        <maml:name>ConnectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-UCSData -UCS LABUCS001 -connectionstring (Get-UCSConnectionString)</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-UCSInstanceDetails</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>UCSInstanceDetails</command:noun>
+      <maml:description>
+        <maml:para>Gets the status of a UCS Instance in the database</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function is used to get the status of a given UCSInstance in the database.  This status determines if the  UCS Instance will be included in the results returned by Get-UCSInstanceList</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-UCSInstanceDetails</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+          <maml:name>Ucs</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+          <dev:type>
+            <maml:name>Object</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+        <maml:name>Ucs</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-UCSInstanceDetails -UCS LABUCS002</dev:code>
+        <dev:remarks>
+          <maml:para>RID          : 23 InstanceName : LABUCS002 IPAddress    : 10.0.34.200 Location     : Nashville Notes        : CoreDmz      : Core Status       : offline DataCenter   : LAB</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>'LABUCS001','NPRUCS001' | Get-UCSInstanceDetails</dev:code>
+        <dev:remarks>
+          <maml:para>RID          : 22 InstanceName : LABUCS001 IPAddress    : 10.0.34.100 Location     : Nashville Notes        : CoreDmz      : Core Status       : Online DataCenter   : LAB</maml:para>
+          <maml:para>RID          : 3 InstanceName : NPRUCS001 IPAddress    : 10.2.99.10 Location     : Nashville Notes        : CoreDmz      : Core Status       : Online DataCenter   : NPR</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Get-UCSInstanceList | Get-UCSInstanceDetails</dev:code>
+        <dev:remarks>
+          <maml:para>RID InstanceName             IPAddress                Location                 Notes                    CoreDmz                  Status                   DataCenter --- ------------             ---------                --------                 -----                    -------                  ------                   ----------   1 NDCUCSTEL                10.2.32.67               Nashville                                         Core                     Online                   NDC   2 SDCUCSTEL                10.4.32.67               Sterling                                          Core                     Online                   SDC   3 NPRUCS001                10.2.99.10               Nashville                                         Core                     Online                   NPR   4 NDCUCS001                10.2.58.36               Nashville                                         Core                     Online                   NDC   5 SDCUCS001                10.4.53.70               Sterling                                          Core                     Online                   SDC   6 SYDUCS001                10.79.34.33              Sydney                                            Core                     Online                   SYD   7 SYDUCS002                10.79.34.105             Sydney                                            eDMZ                     Online                   SYD   8 NEDUCS001                10.3.36.32               Nashville                                         Core                     Online                   NED ...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-UCSInstanceList</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>UCSInstanceList</command:noun>
+      <maml:description>
+        <maml:para>This function returns a list of UCS Instances in the UCS database that have a status of 'online'.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function returns a list of UCS Instances in the UCS database that have a status of 'online'. Use Get-UCSInstanceStatus to check the status and Set-UCSInstanceStatus to change the status of a UCS instance.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-UCSInstanceList</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>I need to add a parameter to allow returning all UCS Instances regardless of status.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-UCSInstanceList</dev:code>
+        <dev:remarks>
+          <maml:para>InstanceName ------------' NDCUCSTEL SDCUCSTEL NPRUCS001 NDCUCS001 SDCUCS001 ...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-UCSInstanceStatus</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>UCSInstanceStatus</command:noun>
+      <maml:description>
+        <maml:para>Gets the status of a UCS Instance in the database</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function is used to get the status of a given UCSInstance in the database.  This status determines if the  UCS Instance will be included in the results returned by Get-UCSInstanceList</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-UCSInstanceStatus</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Ucs</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+          <maml:name>ConnectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Ucs</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+        <maml:name>ConnectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-UCSInstanceStatus -UCS LABUCS002</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-UCSPowerReading</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>UCSPowerReading</command:noun>
+      <maml:description>
+        <maml:para>Collect power readings from a UCS instance and write the results to the database.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Collect power readings from a UCS instance and write the results to the database.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-UCSPowerReading</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Ucs</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+          <maml:name>ConnectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Ucs</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+        <maml:name>ConnectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-UCSPowerReadings -UCS LABUCS001 -connectionstring (Get-UCSConnectionString)</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Invoke-DatabaseQuery</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>DatabaseQuery</command:noun>
+      <maml:description>
+        <maml:para>Invokes a database command.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function is for running commands against a database other than select statements.  This function does not return anything.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-DatabaseQuery</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="conn, cs">
+          <maml:name>connectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>query</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required.  This is the query that will be executed against the database specified in the connectionstring.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="conn, cs">
+        <maml:name>connectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>query</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required.  This is the query that will be executed against the database specified in the connectionstring.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Invoke-DatabaseQuery -verbose -connectionString (Get-UCSConnectionString) -query "Update UCSInstance Set Status = 'offline' where InstanceName = 'LABUCS001'"</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Invoke-UcsInstanceDataCollection</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>UcsInstanceDataCollection</command:noun>
+      <maml:description>
+        <maml:para>Collect all data from all of the UCS instances and write the results to the database as a new dataset.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Loop through a list of UCS Instances that is generated with (Get-UCSInstanceList) and collect all useful UCS data and write that data to the UCS database using a new DataSetID.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-UcsInstanceDataCollection</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Invoke-UcsInstanceDataCollection</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Invoke-UCSPowerReadingDataCollection</command:name>
+      <command:verb>Invoke</command:verb>
+      <command:noun>UCSPowerReadingDataCollection</command:noun>
+      <maml:description>
+        <maml:para>Collect power readings from all of the UCS instances and write the results to the database.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Loop through a list of UCS Instances that is generated with (Get-UCSInstanceList) and collect power usage stats and  write that data to the UCS database.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-UCSPowerReadingDataCollection</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Invoke-UCSPowerReadingsDataCollection</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-UCSInstance</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>UCSInstance</command:noun>
+      <maml:description>
+        <maml:para>Add a UCS Instance to the database</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function is used to add a new UCSInstance in the database.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-UCSInstance</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Ucs</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the UCS entry to add to the database.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+          <maml:name>ConnectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="ip">
+          <maml:name>IPAddress</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the IP Address that the instance name resolves to.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
+          <maml:name>Location</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the location of the datacenter where this instance is installed. e.g. Nashville, Sterling, Sydney, etc...</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none">
+          <maml:name>Notes</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is for notes.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="6" aliases="none">
+          <maml:name>CoreDMZ</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is for the network location type.  e.g. Core, eDMZ, iDMZ etc...</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Core</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none">
+          <maml:name>Status</maml:name>
+          <maml:Description>
+            <maml:para>This parameter needs to be either 'online' or 'offline'.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>Online</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="8" aliases="dc">
+          <maml:name>DataCenter</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is for the DataCenter code for where the UCSInstance is located.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Ucs</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the UCS entry to add to the database.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+        <maml:name>ConnectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="ip">
+        <maml:name>IPAddress</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the IP Address that the instance name resolves to.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="4" aliases="none">
+        <maml:name>Location</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the location of the datacenter where this instance is installed. e.g. Nashville, Sterling, Sydney, etc...</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="5" aliases="none">
+        <maml:name>Notes</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is for notes.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="6" aliases="none">
+        <maml:name>CoreDMZ</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is for the network location type.  e.g. Core, eDMZ, iDMZ etc...</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Core</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="7" aliases="none">
+        <maml:name>Status</maml:name>
+        <maml:Description>
+          <maml:para>This parameter needs to be either 'online' or 'offline'.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>Online</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="8" aliases="dc">
+        <maml:name>DataCenter</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is for the DataCenter code for where the UCSInstance is located.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>New-UCSInstance -UCS LABUCS002 -IPAddress 192.168.4.100 -Location Nashville -Notes 'In the lab yo' -CoreDMZ Core -DataCenter LAB</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Remove-UCSInstance</command:name>
+      <command:verb>Remove</command:verb>
+      <command:noun>UCSInstance</command:noun>
+      <maml:description>
+        <maml:para>Deletes a UCS Instance from the database</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function is used to a given UCSInstance in the database.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-UCSInstance</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Ucs</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+          <maml:name>ConnectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Ucs</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+        <maml:name>ConnectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Remove-UCSInstance -UCS LABUCS003</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-UCSInstanceStatus</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>UCSInstanceStatus</command:noun>
+      <maml:description>
+        <maml:para>Change the status of a UCS Instance in the database</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This function is used to change the status of a given UCSInstance in the database.  This status determines if the  UCS Instance will be included in the results returned by Get-UCSInstanceList</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-UCSInstanceStatus</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Ucs</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+          <maml:name>ConnectionString</maml:name>
+          <maml:Description>
+            <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>Status</maml:name>
+          <maml:Description>
+            <maml:para>This parameter needs to be either 'Online' or 'Offline'.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Ucs</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is the UCS entry to update in the database.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="conn, cs">
+        <maml:name>ConnectionString</maml:name>
+        <maml:Description>
+          <maml:para>This parameter is required to connect to a database to run a query.  This is a standard format connection string. A default is used if not supplied.  To see the default run cmdlet: Get-UCSConnectionString.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>(Get-UCSConnectionString)</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>Status</maml:name>
+        <maml:Description>
+          <maml:para>This parameter needs to be either 'Online' or 'Offline'.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Set-UCSInstanceStatus -UCS LABUCS002 -Status offline</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>

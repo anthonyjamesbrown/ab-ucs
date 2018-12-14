@@ -1,0 +1,1 @@
+﻿New-ModuleManifest -Path 'c:\ps script\ucs\AB-UCS.psd1' -Author "Anthony Brown" -CompanyName AB-UCS -Copyright "2014. All rights reserved." -Description "AB UCS Tools" -FileList 'c:\ps script\ucs\ab-ucs.psm1' -ModuleVersion 1.1 -RequiredModules CiscoUcsPS -RootModule 'c:\ps script\ucs\ab-ucs.psm1'
